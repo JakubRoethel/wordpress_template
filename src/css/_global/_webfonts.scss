@@ -1,0 +1,12 @@
+// Import Google Fonts here, i.e.:
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Source+Sans+Pro:900&subset=latin-ext');
+
+
+@font-face {
+    font-family: 'League Gothic';
+    src: url('./dist/assets/fonts/league_gothic-webfont.woff2') format('woff2'),
+         url('./dist/assets/fonts/league_gothic-webfont.woff') format('woff'),
+         url('./dist/assets/fonts/league_gothic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
