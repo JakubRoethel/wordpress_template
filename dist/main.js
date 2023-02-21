@@ -22,7 +22,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/header */ "./src/js/modules/header.js");
-/* harmony import */ var _modules_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_header__WEBPACK_IMPORTED_MODULE_1__);
 
 
 aos__WEBPACK_IMPORTED_MODULE_0___default().init.bind(undefined, {
@@ -30,7 +29,8 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init.bind(undefined, {
   easing: 'ease-in-out',
   delay: 100
 });
-_modules_header__WEBPACK_IMPORTED_MODULE_1___default();
+(0,_modules_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
+console.log("test");
 
 /***/ }),
 
@@ -38,9 +38,38 @@ _modules_header__WEBPACK_IMPORTED_MODULE_1___default();
 /*!**********************************!*\
   !*** ./src/js/modules/header.js ***!
   \**********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ headerService)
+/* harmony export */ });
+function headerService() {
+  var header = document.querySelector('.header');
+  var headerOverlay = document.querySelector('.navigation__overlay');
+  var doc = document.documentElement;
+  console.log("Test geaderJS");
+  window.addEventListener('scroll', function () {
+    var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+    if (top > 20) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  });
+  var burger = document.querySelector('.header__toggle');
+  burger.addEventListener('click', function () {
+    if (header.classList.contains('header--navigation-open')) {
+      header.classList.remove('header--navigation-open');
+    } else {
+      header.classList.add('header--navigation-open');
+    }
+  });
+  headerOverlay.addEventListener('click', function () {
+    header.classList.remove('header--navigation-open');
+  });
+}
 
 /***/ }),
 

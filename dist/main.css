@@ -476,10 +476,10 @@ table {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0; 
+  right: 0;
   padding: 22px 51px;
   color: #fff;
-  background: transparent;
+  background: red;
   z-index: 6000;
   transition: 0.2s ease-in;
 }
